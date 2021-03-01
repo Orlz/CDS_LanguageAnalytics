@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VENVNAME=workshop_environment
+VENVNAME=sentiment_environment
 
 python3 -m venv $VENVNAME
 source $VENVNAME/bin/activate
