@@ -43,7 +43,7 @@ def main():
     #Construct the argparse arguments with defaults
     #Defaults: input file = "fake_or_real_news.csv",  minimum_edgeweight = 500
     ap = argparse.ArgumentParser()
-    ap.argument("-i", "--input_file", required = False, help = "Path to the input file", default ="../Assignments/data/edges_df.csv")
+    ap.argument("-i", "--input_file", required = False, help = "Path to the input file", default ="../cds-language-orlz/Assignments/data/edges_df.csv")
     ap.add_argument("-m", "--minimum_edgeweight", required=False, help="The minimum edge weight of interest", default=500, type=int)
     #We'll then parse the arguments 
     args = vars(ap.parse_args())
