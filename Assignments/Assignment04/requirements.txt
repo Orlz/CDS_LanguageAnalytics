@@ -4,3 +4,4 @@ spacy==2.3.5
 spacytextblob
 matplotlib
 networkx
+pygraphviz
