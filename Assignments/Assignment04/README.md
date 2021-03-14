@@ -38,7 +38,6 @@ Default parameters have been set should you not wish to use your own. These are:
 This script is run from the command line. There will be a few set-up steps for you to get it running correctly.  
 The script = network.py 
 
-
 ## Parameters 
 You have the option to add your own parameters if you would like. These are optional:
 
@@ -57,16 +56,21 @@ How to use them:
 
 # Steps to take 
 
-1. Navigate to the directory where you have the files stored
-You may have a different directory but an example of this would be
+## 1. Clone the repository 
+The easiest way to access the files is to clone the repository from your commend line and move into Assignment04 as outlined below 
 
 ```bash
-cd cds-language/assignments
+#clone repository into cds-language-orlz
+git clone https://github.com/Orlz/CDS_LanguageAnalytics.git cds-language-orlz
+
+#Move into the correct file 
+cd cds-language-orlz/Assignments/Assignment04
 ```
 
-2. Create the virtual environment
+## 2. Create the virtual environment
 You'll need to create a virtual environment which will allow you to run the script. This will require the requirements.txt file above 
 To create the virtual environment you'll need to open your terminal and type the following code: 
+
 ```bash
 bash create_lang_venv.sh
 ```
@@ -75,11 +79,16 @@ And then activate the environment by typing:
 $ source VE_Networks/bin/activate
 ```
 
-3. (Optional) Specify the parameters and run script    
+## 3. Run the Script 
+This can be done in one of two ways: 
+
+(Optional) Specify the parameters and run script    
 ```bash
 python3 network.py -i ../data/YOUR_FILE_NAME.csv -m 100
 ```
+
 ~ OR ~ 
+
 
 Run the script using the defaults 
 ```bash
