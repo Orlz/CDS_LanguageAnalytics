@@ -25,13 +25,8 @@ import argparse
 
 # Data analysis
 import pandas as pd
-from collections import Counter
 from itertools import combinations 
 from tqdm import tqdm
-
-# NLP
-import spacy
-nlp = spacy.load("en_core_web_sm")
 
 # drawing
 import networkx as nx
@@ -48,7 +43,7 @@ def main():
     #Construct the argparse arguments with defaults
     #Defaults: input file = "fake_or_real_news.csv",  minimum_edgeweight = 500
     ap = argparse.ArgumentParser()
-    ap.argument("-i", "--input_file", required = False, help = "Path to the input file", default ="../data/fake_or_real_news.csv")
+    ap.argument("-i", "--input_file", required = False, help = "Path to the input file", default ="../Assignments/data/edges_df.csv")
     ap.add_argument("-m", "--minimum_edgeweight", required=False, help="The minimum edge weight of interest", default=500, type=int)
     #We'll then parse the arguments 
     args = vars(ap.parse_args())
