@@ -49,7 +49,8 @@ How to use them:
    network.py -i <input_file> -m <minimum_edgeweight>
   
  Example: 
-     (where you want to run them) (script name.py) -i (insert path to file) -m (insert minimum edgeweight number)
+ 
+ (where you want to run them) (script name.py) -i (insert path to file) -m (insert minimum edgeweight number)
     
     python3 network.py -i ../data/edges_df.csv -m 500
 
@@ -58,6 +59,7 @@ How to use them:
 
 1. Navigate to the directory where you have the files stored
 You may have a different directory but an example of this would be
+
 ```bash
 cd cds-language/assignments
 ```
@@ -70,22 +72,20 @@ bash create_lang_venv.sh
 ```
 And then activate the environment by typing: 
 ```bash
-$ source sentiment_environment/bin/activate
+$ source VE_Networks/bin/activate
 ```
 
-3. Specify the parameters and run the directory 
-This will involve inserting your path directory after -d  
-And also inserting your requested subset size after -s    (NB This will just be a number, see example above) 
-
-I would recommend running the script on only a subset of the data. This can be done with the following command (this will take the first 100,000 headlines) 
+3. (Optional) Specify the parameters and run script    
 ```bash
-python3 Assignment03.py -d ../data/abcnews-date-text.csv -s 100000
+python3 network.py -i ../data/YOUR_FILE_NAME.csv -m 100
+```
+~ OR ~ 
+
+Run the script using the defaults 
+```bash
+python3 network.py 
 ```
 
-4. Check the data 
-Providing there are no errors, you should get an output message informing where the output has been saved 
-
-
-
+Providing there are no errors, you should get an output message informing that the graph is saved in "viz" and the dataframe is in "output" 
 
     
