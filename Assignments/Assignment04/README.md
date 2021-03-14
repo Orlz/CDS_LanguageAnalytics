@@ -79,6 +79,11 @@ And then activate the environment by typing:
 $ source VE_Networks/bin/activate
 ```
 
+You may need to install networkx and pygraphviz if they do not copy across: 
+```bash
+pip install networkx pygraphviz
+```
+
 ## 3. Run the Script 
 This can be done in one of two ways: 
 
@@ -88,7 +93,6 @@ python3 network.py -i ../data/YOUR_FILE_NAME.csv -m 100
 ```
 
 ~ OR ~ 
-
 
 Run the script using the defaults 
 ```bash
