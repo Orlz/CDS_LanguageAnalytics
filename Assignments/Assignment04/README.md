@@ -30,7 +30,7 @@ Example command line:
  
 Default parameters have been set should you not wish to use your own. These are: 
 
-    input_file: fake_or_real_news.csv
+    input_file: edges_df.csv
 
     minimum_edgeweight: 500
 
