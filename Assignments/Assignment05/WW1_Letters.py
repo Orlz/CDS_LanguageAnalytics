@@ -132,15 +132,15 @@ def gensim_processing(data):
     Here we use gensim to define bi-grams and tri-grams which enable us to create a create a dictonary and corpus 
     """
     #build the models first 
-    bigram = gensim.models.Phrases(data["text"], min_count=3, threshold=75) #We're using a threshold of 50
-    trigram = gensim.models.Phrases(bigram[data["text"]], threshold=75)  
+    bigram = gensim.models.Phrases(data, min_count=3, threshold=75) #We're using a threshold of 50
+    trigram = gensim.models.Phrases(bigram[data], threshold=75)  
     
     #Then fit them to the data 
     bigram_mod = gensim.models.phrases.Phraser(bigram)
     trigram_mod = gensim.models.phrases.Phraser(trigram)
     
     #We further process the data using spacy and allow Nouns, Adjectives and Verbs to pass 
-    data_processed = lda_utils.process_words(data["text"],nlp, bigram_mod, trigram_mod, allowed_postags=["NOUN","ADJ", "VERB"])
+    data_processed = lda_utils.process_words(data,nlp, bigram_mod, trigram_mod, allowed_postags=["NOUN","ADJ", "VERB"])
 
     #We now have a list of words which can be used to train the LDA model
     return data_processed
