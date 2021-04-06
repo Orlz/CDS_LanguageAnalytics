@@ -147,7 +147,7 @@ def gensim_processing(data):
     
     
     
-def create_dict_corpus(data_preprocessed):
+def create_dict_corpus(data_processed):
     """
     Here we create a dictonary and a corpus. 
     => The dictionary converts the words into an integer value
@@ -166,7 +166,7 @@ def create_dict_corpus(data_preprocessed):
 
 
 
-def run_lda(data_preprocessing, dictionary, corpus):
+def run_lda(dictionary, corpus):
     """
     Our model takes our data, corpus, and dictionary to generate a given number of topics. 
     This script uses 15 topics as that was the recommended number calculated. 
@@ -186,7 +186,7 @@ def run_lda(data_preprocessing, dictionary, corpus):
 
     
     
-def calculate_plx_coh(data_preprocessed, lda_model, corpus, dictionary):
+def calculate_plx_coh(data_processed, lda_model, corpus, dictionary):
     """
     Perplexity =  A measure of how good the model is. The lower the number the better. 
     Coherence =  
