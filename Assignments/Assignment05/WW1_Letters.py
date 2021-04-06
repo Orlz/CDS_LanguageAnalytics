@@ -39,7 +39,6 @@ import numpy as np
 
 #stopwords
 import nltk
-nltk.download('stopwords')
 from nltk.corpus import stopwords
 stop_words = stopwords.words('english')
 
@@ -47,10 +46,11 @@ stop_words = stopwords.words('english')
 import spacy
 nlp = spacy.load("en_core_web_sm", disable=["ner"])
 
+
 # visualisations 
 import pyLDAvis.gensim
-pyLDAvis.enable_notebook()
 import seaborn as sns
+from matplotlib import pyplot as plt
 from matplotlib import rcParams
 # figure size in inches
 rcParams['figure.figsize'] = 20,10
@@ -62,9 +62,8 @@ from gensim.models import CoherenceModel
 import lda_utils
 
 # warnings
-import logging, warnings
-warnings.filterwarnings('ignore')
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.ERROR)
+import warnings
+warnings.filterwarnings('ignore', category=DeprecationWarning)
 
 """
 ---------------
