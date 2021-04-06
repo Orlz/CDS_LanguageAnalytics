@@ -179,8 +179,9 @@ def run_lda(dictionary, corpus):
                                            chunksize=10,             #chunck size to help model be more effifienct 
                                            passes=10,                #Number of times the model passes through the data 
                                            iterations=100,
-                                           per_word_topics= True,    
+                                           per_word_topics=True,    
                                            minimum_probability=0.0)
+    
     
     return lda_model
 
