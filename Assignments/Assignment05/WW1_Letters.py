@@ -98,7 +98,7 @@ def main():
     
     ##STEP FOUR: Run the LDA model (this will create 15 topics) 
     print("Set-up complete. Let's run the LDA model...") 
-    lda_model = run_lda(data_processed, corpus, dictionary)
+    lda_model = run_lda(corpus, dictionary)
     
     ##STEP FIVE: Calculate the perplexity and coherence scores 
     print("Calculating complexity and coherence...") 
