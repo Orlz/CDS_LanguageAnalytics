@@ -180,7 +180,7 @@ def run_lda(dictionary, corpus):
                                            passes=10,                #Number of times the model passes through the data 
                                            iterations=100,
                                            per_word_topics=True,    
-                                           minimum_probability=0.0)
+                                           minimum_probability=0.01)
     
     
     return lda_model
