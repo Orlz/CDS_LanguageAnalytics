@@ -9,9 +9,13 @@ This weeks assignment involved training an LDA model on data selected by onself.
 __The Data__ 
 I seleted a dataset of 50 handwritten letters between British or French soldiers and their loved ones during the First World War. I was interested to see what topics would arise throughout these letters, written during one of the most distressing times of their lives. This data is saved in the directory above as WW1_Letters.csv and can also be found in the data folder at the root of the directory. 
 
-20 of the letters have been converted from French to English with the use of Google translate. 
+20 of the letters have been converted from French to English with the use of Google translate.
 
+__Research Question__ 
 
-![Image of topics]
-(https://github.com/Orlz/CDS_LanguageAnalytics/blob/main/Assignments/Assignment05/output/Topics.png)
+What are soldiers and their loved ones talking about in their correspondence through letters during WW1? 
+- Extensions to be added at a later point (Do French and soldiers differ in the topics they discuss?) 
+- Does the sentiment of these letters change over time (as the war goes on?) 
 
+__Topics found __ 
+<img width="1120" alt="Topics" src="https://user-images.githubusercontent.com/52678852/113854524-3df51c00-979f-11eb-8455-75e7b7ac37de.png">
