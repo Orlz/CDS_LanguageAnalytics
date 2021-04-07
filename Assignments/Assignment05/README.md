@@ -1,3 +1,5 @@
+## Read me being updated ##
+
 ## Topic Modelling in Python: World War I Letters 
 
 **The Assignment**
