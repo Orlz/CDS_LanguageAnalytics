@@ -132,15 +132,15 @@ def gensim_processing(data):
     Here we use gensim to define bi-grams and tri-grams which enable us to create a create a dictonary and corpus 
     """
     #build the models first 
-    bigram = gensim.models.Phrases(data, min_count=3, threshold=75) #We're using a threshold of 50
-    trigram = gensim.models.Phrases(bigram[data], threshold=75)  
+    bigram = gensim.models.Phrases(data["text"], min_count=3, threshold=100) #We're using a threshold of 100
+    trigram = gensim.models.Phrases(bigram[data["text"]], threshold=100)  
     
     #Then fit them to the data 
     bigram_mod = gensim.models.phrases.Phraser(bigram)
     trigram_mod = gensim.models.phrases.Phraser(trigram)
     
     #We further process the data using spacy and allow Nouns, Adjectives and Verbs to pass 
-    data_processed = lda_utils.process_words(data,nlp, bigram_mod, trigram_mod, allowed_postags=["NOUN","ADJ", "VERB"])
+    data_processed = lda_utils.process_words(data["text"],nlp, bigram_mod, trigram_mod, allowed_postags=["NOUN","ADJ", "VERB"])
 
     #We now have a list of words which can be used to train the LDA model
     return data_processed
@@ -158,7 +158,7 @@ def create_dict_corpus(data_processed):
     dictionary = corpora.Dictionary(data_processed)
     
     #We want to remove very common words so we'll filter those which appear in more than 80% of the letters
-    dictionary.filter_extremes(no_above=0.8)  
+    #dictionary.filter_extremes(no_above=0.8)     (can be removed) 
 
     # Create Corpus: Term Document Frequency
     corpus = [dictionary.doc2bow(text) for text in data_processed]
@@ -224,7 +224,11 @@ def create_topics_df(lda_model, corpus, data_processed):
     df_topic_keywords = lda_utils.format_topics_sentences(ldamodel=lda_model, 
                                                           corpus=corpus, 
                                                           texts=data_processed)
-    df_topic_keywords.to_csv("output/topic_keywords.csv") 
+    df_dominant_topic = df_topic_keywords.reset_index()
+    df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contrib', 'Keywords', 'Text']
+    print(df_dominant_topic)
+    
+    df_dominant_topic.to_csv("output/topic_keywords.csv") 
     
     
     """
@@ -253,8 +257,8 @@ def create_topics_df(lda_model, corpus, data_processed):
     df = pd.DataFrame(map(list,zip(*split)))
     df.to_csv("output/document_topic_matrix.csv")
     
-    #Make this into a lineplot using Seaborn with a rolling mean of 50, then convert it into a figure 
-    topic_line_plot = sns.lineplot(data=df.T.rolling(50).mean())
+    #Make this into a lineplot using Seaborn. We don't have many letters so our rolling mean will just be 5  
+    topic_line_plot = sns.lineplot(data=df.T.rolling(5).mean())
     figure = topic_line_plot.get_figure()
     
     #Save the figure in the output directory 
