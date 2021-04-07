@@ -11,3 +11,7 @@ I seleted a dataset of 50 handwritten letters between British or French soldiers
 
 20 of the letters have been converted from French to English with the use of Google translate. 
 
+
+![Image of topics]
+(https://github.com/Orlz/CDS_LanguageAnalytics/blob/main/Assignments/Assignment05/output/Topics.png)
+
