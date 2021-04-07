@@ -1,5 +1,3 @@
-## NB: This script is not yet ready and buggy: I am very sorry 
-
 ## Topic Modelling in Python: World War I Letters 
 
 **The Assignment**
