@@ -1,0 +1,2 @@
+The models scores are as follows, 
+Perplexity: -5.894962871747168, Coherence: 0.30629771565883
